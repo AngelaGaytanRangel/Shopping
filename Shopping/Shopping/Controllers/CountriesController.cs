@@ -20,6 +20,7 @@ namespace Shopping.Controllers
         }
 
         // GET: Countries
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
               return _context.Countries != null ? 
@@ -28,6 +29,7 @@ namespace Shopping.Controllers
         }
 
         // GET: Countries/Details/5
+        [HttpGet]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Countries == null)

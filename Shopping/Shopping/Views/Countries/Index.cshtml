@@ -5,9 +5,7 @@
 }
 
 
-<h1>Index</h1>
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
-
 <p>
     <a asp-action="Create" class="btn btn-outline-primary">Crear Nuevo</a>
 </p>
@@ -24,6 +22,9 @@
                             <th>
                                 @Html.DisplayNameFor(model => model.Name)
                             </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.StatesNumber)
+                            </th>
                             <th></th>
                         </tr>
                     </thead>
@@ -33,6 +34,9 @@
                             <tr>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StatesNumber)
                                 </td>
                                 <td>
                                     <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning">Editar</a>
@@ -47,11 +51,11 @@
         </div>
     </div>
 </div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
     <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-
     <script type="text/javascript">
         $(document).ready(function () {
             $('#MyTable').DataTable({
@@ -66,5 +70,3 @@
         });
     </script>
 }
-
-

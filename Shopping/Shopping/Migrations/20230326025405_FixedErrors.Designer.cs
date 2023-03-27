@@ -24,7 +24,7 @@ namespace Shopping.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Shooping.Data.Entities.City", b =>
+            modelBuilder.Entity("Shopping.Data.Entities.City", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -50,7 +50,7 @@ namespace Shopping.Migrations
                     b.ToTable("Cities");
                 });
 
-            modelBuilder.Entity("Shooping.Data.Entities.Country", b =>
+            modelBuilder.Entity("Shopping.Data.Entities.Country", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -71,7 +71,7 @@ namespace Shopping.Migrations
                     b.ToTable("Countries");
                 });
 
-            modelBuilder.Entity("Shooping.Data.Entities.State", b =>
+            modelBuilder.Entity("Shopping.Data.Entities.State", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -118,9 +118,9 @@ namespace Shopping.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("Shooping.Data.Entities.City", b =>
+            modelBuilder.Entity("Shopping.Data.Entities.City", b =>
                 {
-                    b.HasOne("Shooping.Data.Entities.State", "State")
+                    b.HasOne("Shopping.Data.Entities.State", "State")
                         .WithMany("Cities")
                         .HasForeignKey("StateId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -129,9 +129,9 @@ namespace Shopping.Migrations
                     b.Navigation("State");
                 });
 
-            modelBuilder.Entity("Shooping.Data.Entities.State", b =>
+            modelBuilder.Entity("Shopping.Data.Entities.State", b =>
                 {
-                    b.HasOne("Shooping.Data.Entities.Country", "Country")
+                    b.HasOne("Shopping.Data.Entities.Country", "Country")
                         .WithMany("States")
                         .HasForeignKey("CountryId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -140,12 +140,12 @@ namespace Shopping.Migrations
                     b.Navigation("Country");
                 });
 
-            modelBuilder.Entity("Shooping.Data.Entities.Country", b =>
+            modelBuilder.Entity("Shopping.Data.Entities.Country", b =>
                 {
                     b.Navigation("States");
                 });
 
-            modelBuilder.Entity("Shooping.Data.Entities.State", b =>
+            modelBuilder.Entity("Shopping.Data.Entities.State", b =>
                 {
                     b.Navigation("Cities");
                 });

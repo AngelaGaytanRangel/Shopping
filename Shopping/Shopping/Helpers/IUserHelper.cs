@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Shooping.Models;
+using Shopping.Models;
 using Shopping.Data.Entities;
 using Shopping.Models;
 

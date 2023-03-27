@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Shooping.Data.Entities
+namespace Shopping.Data.Entities
 {
     public class Country
     {

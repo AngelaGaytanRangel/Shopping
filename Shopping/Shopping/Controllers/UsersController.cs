@@ -1,16 +1,15 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Shooping.Data;
-using Shooping.Data.Entities;
-using Shooping.Helpers;
-using Shooping.Models;
 using Shopping.Data.Entities;
-using Shopping.Data;
 using Shopping.Enum;
 using Shopping.Helpers;
+using Shopping.Models;
+using Shopping.Data.Entities;
+using Shopping.Data;
+using Shopping.Helpers;
 
-namespace Shooping.Controllers
+namespace Shopping.Controllers
 {
     [Authorize(Roles = "Admin")]
     public class UsersController : Controller
@@ -32,7 +31,7 @@ namespace Shooping.Controllers
         {
             return View(await _context.Users
                 .Include(u => u.City)
-                .ThenInclude(c => c.State) 
+                .ThenInclude(c => c.State)
                 .ThenInclude(s => s.Country)
                 .ToListAsync());
         }

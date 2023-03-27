@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Shooping.Data.Entities;
+using Shopping.Data.Entities;
 using Shopping.Enum;
 using System.ComponentModel.DataAnnotations;
 
@@ -36,13 +36,13 @@ namespace Shopping.Data.Entities
         //TODO: Pending to put the correct paths
         [Display(Name = "Foto")]
         public string ImageFullPath => ImageId == Guid.Empty
-            ? $"https://localhost:7057/images/noimage.png"
+            ? $"https://localhost:7180/images/noimage.png"
             : $"https://shoppinggaytan.blob.core.windows.net/users/{ImageId}";
 
         [Display(Name = "Tipo de usuario")]
         public UserType UserType { get; set; }
 
-        
+
 
         [Display(Name = "Usuario")]
         public string FullName => $"{FirstName} {LastName}";

@@ -1,4 +1,4 @@
-﻿namespace Shooping.Helpers
+﻿namespace Shopping.Helpers
 {
     public interface IBlobHelper
     {

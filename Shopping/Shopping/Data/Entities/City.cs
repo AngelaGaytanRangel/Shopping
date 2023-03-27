@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace Shooping.Data.Entities
+namespace Shopping.Data.Entities
 {
     public class City
     {

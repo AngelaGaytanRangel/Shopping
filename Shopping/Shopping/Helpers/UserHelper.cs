@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Shooping.Data;
-using Shooping.Data.Entities;
-using Shooping.Models;
+using Shopping.Data;
+using Shopping.Data.Entities;
+using Shopping.Models;
 using Shopping.Data.Entities;
 using Shopping.Data;
 using Shopping.Helpers;
 
-namespace Shooping.Helpers
+namespace Shopping.Helpers
 {
     public class UserHelper : IUserHelper
     {

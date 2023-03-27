@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Shooping.Helpers
+namespace Shopping.Helpers
 {
     public interface ICombosHelper
     {

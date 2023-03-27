@@ -1,10 +1,10 @@
-﻿using Shooping.Data.Entities;
+﻿using Shopping.Data.Entities;
 using Shopping.Data.Entities;
 using Shopping.Data;
 using Shopping.Helpers;
 using Shopping.Enum;
 
-namespace Shooping.Data
+namespace Shopping.Data
 {
     public class SeedDb
     {

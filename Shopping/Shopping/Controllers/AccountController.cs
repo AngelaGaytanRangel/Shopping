@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Shooping.Data.Entities;
-using Shooping.Helpers;
-using Shooping.Models;
+using Shopping.Data.Entities;
+using Shopping.Helpers;
+using Shopping.Models;
 using Shopping.Data.Entities;
 using Shopping.Data;
 using Shopping.Enum;
 using Shopping.Helpers;
 
-namespace Shooping.Controllers
+namespace Shopping.Controllers
 {
     public class AccountController : Controller
     {

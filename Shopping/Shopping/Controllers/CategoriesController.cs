@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Shooping.Data;
-using Shooping.Data.Entities;
+using Shopping.Data;
+using Shopping.Data.Entities;
 using Shopping.Data.Entities;
 using Shopping.Data;
 
-namespace Shooping.Controllers
+namespace Shopping.Controllers
 {
     [Authorize(Roles = "Admin")]
     public class CategoriesController : Controller

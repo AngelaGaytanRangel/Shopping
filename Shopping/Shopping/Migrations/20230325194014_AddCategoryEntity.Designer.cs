@@ -24,7 +24,7 @@ namespace Shopping.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Shooping.Data.Entities.Country", b =>
+            modelBuilder.Entity("Shopping.Data.Entities.Country", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

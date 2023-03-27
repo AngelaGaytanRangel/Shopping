@@ -2,7 +2,7 @@
 using Shopping.Enum;
 using System.ComponentModel.DataAnnotations;
 
-namespace Shooping.Models
+namespace Shopping.Models
 {
     public class AddUserViewModel : EditUserViewModel
     {

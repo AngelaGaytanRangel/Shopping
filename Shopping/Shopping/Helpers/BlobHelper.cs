@@ -1,7 +1,7 @@
 ﻿using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 
-namespace Shooping.Helpers
+namespace Shopping.Helpers
 {
     public class BlobHelper : IBlobHelper
     {

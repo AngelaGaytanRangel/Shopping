@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Shooping.Data.Entities;
 using Shopping.Data.Entities;
 
 namespace Shopping.Data
 {
-    public class DataContext :IdentityDbContext<User>
+    public class DataContext : IdentityDbContext<User>
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {

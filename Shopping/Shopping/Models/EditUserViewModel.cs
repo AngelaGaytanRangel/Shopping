@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
 
-namespace Shooping.Models
+namespace Shopping.Models
 {
     public class EditUserViewModel
     {

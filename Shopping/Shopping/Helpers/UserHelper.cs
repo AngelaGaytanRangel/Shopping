@@ -6,8 +6,9 @@ using Shopping.Models;
 using Shopping.Data.Entities;
 using Shopping.Data;
 using Shopping.Helpers;
+using Shopping.Models;
 
-namespace Shopping.Helpers
+namespace Shooping.Helpers
 {
     public class UserHelper : IUserHelper
     {
@@ -26,7 +27,6 @@ namespace Shopping.Helpers
         {
             return await _userManager.CreateAsync(user, password);
         }
-
         public async Task<User> AddUserAsync(AddUserViewModel model)
         {
             User user = new()
@@ -42,28 +42,23 @@ namespace Shopping.Helpers
                 UserName = model.Username,
                 UserType = model.UserType
             };
-
             IdentityResult result = await _userManager.CreateAsync(user, model.Password);
             if (result != IdentityResult.Success)
             {
                 return null;
             }
-
             User newUser = await GetUserAsync(model.Username);
             await AddUserToRoleAsync(newUser, user.UserType.ToString());
             return newUser;
         }
-
         public async Task AddUserToRoleAsync(User user, string roleName)
         {
             await _userManager.AddToRoleAsync(user, roleName);
         }
-
         public async Task<IdentityResult> ChangePasswordAsync(User user, string oldPassword, string newPassword)
         {
             return await _userManager.ChangePasswordAsync(user, oldPassword, newPassword);
         }
-
         public async Task CheckRoleAsync(string roleName)
         {
             bool roleExists = await _roleManager.RoleExistsAsync(roleName);
@@ -106,6 +101,26 @@ namespace Shopping.Helpers
         public async Task<IdentityResult> UpdateUserAsync(User user)
         {
             return await _userManager.UpdateAsync(user);
+        }
+
+        public async Task<IdentityResult> ConfirmEmailAsync(User user, string token)
+        {
+            return await _userManager.ConfirmEmailAsync(user, token);
+        }
+
+        public async Task<string> GenerateEmailConfirmationTokenAsync(User user)
+        {
+            return await _userManager.GenerateEmailConfirmationTokenAsync(user);
+        }
+
+        public async Task<string> GeneratePasswordResetTokenAsync(User user)
+        {
+            return await _userManager.GeneratePasswordResetTokenAsync(user);
+        }
+
+        public async Task<IdentityResult> ResetPasswordAsync(User user, string token, string password)
+        {
+            return await _userManager.ResetPasswordAsync(user, token, password);
         }
     }
 }

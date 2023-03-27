@@ -14,6 +14,7 @@ namespace Shopping.Helpers
         Task CheckRoleAsync(string roleName);
 
         Task AddUserToRoleAsync(User user, string roleName);
+        Task<User> AddUserAsync(AddUserViewModel model);
 
         Task<bool> IsUserInRoleAsync(User user, string roleName);
         Task<SignInResult> LoginAsync(LoginViewModel model);

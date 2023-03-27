@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Shooping.Data;
 using Shooping.Data.Entities;
 using Shopping.Data.Entities;
 using Shopping.Data;
-using Microsoft.AspNetCore.Authorization;
-using System.Data;
 
 namespace Shooping.Controllers
 {
@@ -13,23 +12,18 @@ namespace Shooping.Controllers
     public class CategoriesController : Controller
     {
         private readonly DataContext _context;
-
         public CategoriesController(DataContext context)
         {
             _context = context;
         }
-
         public async Task<IActionResult> Index()
         {
             return View(await _context.Categories.ToListAsync());
         }
-
-
         public IActionResult Create()
         {
             return View();
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Category category)
@@ -58,26 +52,21 @@ namespace Shooping.Controllers
                     ModelState.AddModelError(string.Empty, exception.Message);
                 }
             }
-
             return View(category);
         }
-
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-
             Category category = await _context.Categories.FindAsync(id);
             if (category == null)
             {
                 return NotFound();
             }
-
             return View(category);
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Category category)
@@ -86,7 +75,6 @@ namespace Shooping.Controllers
             {
                 return NotFound();
             }
-
             if (ModelState.IsValid)
             {
                 try
@@ -111,42 +99,34 @@ namespace Shooping.Controllers
                     ModelState.AddModelError(string.Empty, exception.Message);
                 }
             }
-
             return View(category);
         }
-
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-
             Category category = await _context.Categories.FindAsync(id);
             if (category == null)
             {
                 return NotFound();
             }
-
             return View(category);
         }
-
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-
             Category category = await _context.Categories.FindAsync(id);
             if (category == null)
             {
                 return NotFound();
             }
-
             return View(category);
         }
-
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

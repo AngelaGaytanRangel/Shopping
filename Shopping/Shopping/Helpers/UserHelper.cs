@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Shooping.Models;
 using Shopping.Data;
 using Shopping.Data.Entities;
 using Shopping.Models;
@@ -18,7 +19,7 @@ namespace Shopping.Helpers
             _context = context;
             _userManager = userManager;
             _roleManager = roleManager;
-            _signInManager = _signInManager;
+            this._signInManager = _signInManager;
         }
         public async Task<IdentityResult> AddUserAsync(User user, string password)
         {
@@ -58,7 +59,7 @@ namespace Shopping.Helpers
 
         public async Task<SignInResult> LoginAsync(LoginViewModel model)
         {
-            return await _signInManager.PasswordSignInAsync(model.Username, model.Password, model.RememberMe,false);
+            return await _signInManager.PasswordSignInAsync(model.Username, model.Password, model.RememberMe, false);
         }
 
         public async Task LogoutAsync()

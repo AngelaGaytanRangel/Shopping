@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Shooping.Models;
 using Shopping.Helpers;
-using Shopping.Models;
 
-namespace Shopping.Controllers
+namespace Shooping.Controllers
 {
     public class AccountController : Controller
     {
@@ -11,7 +10,7 @@ namespace Shopping.Controllers
 
         public AccountController(IUserHelper userHelper)
         {
-            this._userHelper = userHelper;
+            _userHelper = userHelper;
         }
 
         public IActionResult Login()
@@ -46,7 +45,10 @@ namespace Shopping.Controllers
             await _userHelper.LogoutAsync();
             return RedirectToAction("Index", "Home");
         }
+
+        public IActionResult NotAuthorized()
+        {
+            return View();
+        }
     }
-
 }
-

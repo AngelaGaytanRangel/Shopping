@@ -4,9 +4,12 @@ using Shooping.Data;
 using Shooping.Data.Entities;
 using Shopping.Data.Entities;
 using Shopping.Data;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace Shooping.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CategoriesController : Controller
     {
         private readonly DataContext _context;
@@ -20,6 +23,7 @@ namespace Shooping.Controllers
         {
             return View(await _context.Categories.ToListAsync());
         }
+
 
         public IActionResult Create()
         {

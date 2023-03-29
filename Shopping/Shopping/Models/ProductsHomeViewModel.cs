@@ -1,4 +1,4 @@
-﻿using Shopping.Data.Entities;
+﻿/*using Shopping.Data.Entities;
 
 namespace Shopping.Models
 {
@@ -13,4 +13,4 @@ namespace Shopping.Models
         public Product Product4 { get; set; }
     }
 
-}
+}*/

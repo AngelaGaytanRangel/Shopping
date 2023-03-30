@@ -14,6 +14,8 @@ namespace Shopping.Data.Entities
         {
             get; set;
         }
+        [Display(Name = "# Productos")]
+        public int ProductsNumber => ProductCategories == null ? 0 : ProductCategories.Count();
 
-        }
+    }
 }

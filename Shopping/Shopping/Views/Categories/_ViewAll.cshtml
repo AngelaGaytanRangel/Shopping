@@ -24,8 +24,8 @@
         {
         <tr>
             <td>
-                <a asp-action="Details" asp-controller="Categories" asp-route-Id="@item.Id">@Html.DisplayFor(modelItem => item.Name)</a>
-            </td>
+                @Html.DisplayFor(modelItem => item.Name)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ProductsNumber)
             </td>
